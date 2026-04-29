@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>VPS frontend</h1>
+  <button onclick="load()">Test API</button>
+  <pre id="out"></pre>
+
+  <script>
+    async function load() {
+      const res = await fetch('/api/health');
+      const data = await res.json();
+      document.getElementById('out').innerText = JSON.stringify(data);
+    }
+  </script>
+</body>
+</html>
